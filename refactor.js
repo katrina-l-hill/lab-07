@@ -1,46 +1,47 @@
-// function bath(){
-    // let bathBomb = prompt('Are you ready for a bath');
-// }
+function bathScent() {
+    let bathBomb = prompt ('Choose your bathbomb scent (lemon or mint):');
+    while(bathBomb != "lemon" && bathBomb != "mint")
+    {
+        bathBomb = prompt ('Invalid input. Choose your bathbomb scent (lemon or mint):');
+    }
+    return bathBomb;
+}
 
+function waterTemp() {
+    let temp = prompt ('Choose your temperature (hot or warm):');
+    while(temp != "hot" && temp != "warm")
+    {
+        temp = prompt ('Invalid input. Choose your temperature (hot or warm):');
+    }
+    return temp;
+}
 
-    // let bathBomb = 'What scent  of bathbomb do you like?';
-    // let water = 'water';
-    // let candles = 'vanilla scented candles';
-    // let book = 'Adventure book';
+function bathCandles() {
+    let useCandles = prompt ('Do you want candles? (y or n):');
+    while(useCandles != "y" && useCandles != "n")
+    {
+        useCandles = prompt ('Invalid input. Do you want candles? (y or n):');
+    }
+    return useCandles;
+}
 
-function bathNeeds() {
-    let bathBomb = prompt ('Choose your bathbomb scent');
-    // let bathStuff = bathBomb + water + candles + book
-    // return bathStuff
-    
-
+function bathBook() {
+    let useBook = prompt ('Would you like a book to read? (y or n):');
+    while(useBook != "y" && useBook != "n")
+    {
+        useBook = prompt ('Invalid input. Do you want a book to read? (y or n):');
+    }
+    return useBook;
 }
 
 function runABath(bathBomb, water, candles, book) {
-    if (bathBomb) {
-        console.log('Yay, we have bathBombs')
-    } else {
-        console.log('Oops. Fresh out of bathbombs')
-    }
-    let bathTime = 'The things you need to have a bath are ' + bathBomb + ', ' + water + ', ' + candles + ', and an ' + 
-    book;
-    // console.log('bathTime', bathTime)
-
-
-    return bathTime
+    return "Enjoy your bath. You chose (a) scent: " + bathBomb + " (b) water temp: " + water +
+                " (c) use candles? " + candles + " (d) read a book? " + book;
 }
 
-let bathStuff = bathNeeds
-
-let bathTime = runABath ();
-console.log('RunABath', runABath);
-// let runABath () {
-
-// }
-
-// runABath('Lemon'); 
-// let bathStuff = bathTime ()
-
-// function = runABath();
-
-// function runABath(bathBomb, water, candles, book) {
+let scent = bathScent();
+let water = waterTemp();
+let useCandles = bathCandles();
+let useBook = bathBook();
+let message = runABath(scent, water, useCandles, useBook);
+console.log(message);
